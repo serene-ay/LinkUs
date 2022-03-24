@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application Name</title>
+  <title>LinkUs</title>
   <style>
             *{
         box-sizing: border-box;
@@ -91,27 +91,43 @@
         }
         .home{
             background-image: url('/static/home.png');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .university{
             background-image: url('/static/university.png');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .shop{
             background-image: url('/static/shop.jpg');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .park{
             background-image: url('/static/park.jpg');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .study{
             background-image: url('/static/study.jpg');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .eat{
             background-image: url('/static/eating.jpeg');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .sleep{
             background-image: url('/static/sleeping.png');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .errand{
             background-image: url('/static/errands.jpg');
+            background-size: contain;
+            height: 80px;width:150px;
         }
         .sad{
             background-image: url('/static/sad.png');
@@ -127,11 +143,11 @@
         }
 
         .card h2{
-            text-align: center;
-            margin: 5px;
             font-size: 20px;
             font-family: sans-serif;
-
+            text-align: left;
+            margin-top: -4px;
+            margin-left: 18px;
         }
 
         .card:active{
@@ -145,59 +161,59 @@
 </head>
 <body>
   <div id="app">
-    <H1>Applicaiton Name</H1>
+    <H1>LinkUs</H1>
     <div class="all-cards">
         <h3>Select Location</h3>
         <section class="container">
-            <a href="" class="card">
-                <div class="card-image home" @click="button('location','home')">
+            <div class="card" @click="button('location','home')">
+                <div class="card-image home" >
                 </div>
                 <h2>Home</h2>
-            </a>
-            <a href="" class="card">
-                <div class="card-image university" @click="button('location','university')">
+            </div>
+            <div class="card" @click="button('location','university')">
+                <div class="card-image university" >
                 </div>
                 <h2>University</h2>
-            </a>
+            </div>
         </section>
         <section class="container">
-            <a href="" class="card">
-                <div class="card-image shop" @click="button('location','shop')">
+            <div class="card" @click="button('location','shop')">
+                <div class="card-image shop" >
                 </div>
                 <h2>Shop</h2>
-            </a>
-            <a href="" class="card">
-                <div class="card-image park" @click="button('location','park')">
+            </div>
+            <div class="card" @click="button('location','park')">
+                <div class="card-image park">
                 </div>
                 <h2>Park</h2>
-            </a>
+            </div>
         </section>
     </div>
     <div class="all-cards">
         <h3>Select Activity</h3>
         <section class="container">
-            <a href="" class="card">
-                <div class="card-image study" @click="button('message','study')">
+            <div class="card" @click="button('message','study')">
+                <div class="card-image study">
 		        </div>
                 <h2>Studying</h2>
-            </a>
-            <a href="" class="card">
-                <div class="card-image eat" @click="button('message','eat')">
+            </div>
+            <div class="card" @click="button('message','eat')">
+                <div class="card-image eat">
 		        </div>
                 <h2>Eating</h2>
-            </a>
+            </div>
         </section>
         <section class="container">
-            <a href="" class="card">
-                <div class="card-image sleep" @click="button('message','sleep')">
+            <div class="card" @click="button('message','sleep')">
+                <div class="card-image sleep">
 		        </div>
                 <h2>Sleeping</h2>
-            </a>
-            <a href="" class="card">
-                <div class="card-image errand" @click="button('message','walk')">
+            </div>
+            <div class="card" @click="button('message','walk')">
+                <div class="card-image errand">
 		        </div>
-                <h2>Running Errands</h2>
-            </a>
+                <h2>Walking</h2>
+            </div>
         </section>
     </div>
     <div class="all-cards">
