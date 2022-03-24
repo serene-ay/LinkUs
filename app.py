@@ -53,7 +53,10 @@ def button_call(event_type):
 @app.route('/json')
 def return_json():
     response.content_type = 'application/json'
+    data["current_time"] = time.strftime("%H:%M:%S")
+    data["current_date"] = time.strftime("%Y-%m-%d")
     return json.dumps(dict(data))
+
 @app.route('/get/emoji')
 def return_emoji():
     response.content_type = 'application/json'
@@ -67,7 +70,6 @@ def emoji():
 @app.route('/static/<filename>')
 def server_static(filename):
     return static_file(filename, root='static/')
-
 
 @app.route('/test')
 def test():
