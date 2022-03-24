@@ -18,6 +18,9 @@
           <v-row class="col-12 justify-center">
               {% dt %}
           </v-row>
+          <v-row class="col-12 justify-center">
+              {% currentdt %}
+          </v-row>
         </v-container>
 
       </v-main>
@@ -34,25 +37,27 @@
       vuetify: new Vuetify(),
       data: {
         imagesrc: "",
-        dt: ""
+        dt: "",
+        currentdt: ""
       },
       methods: {
         hello: function() {
           update = this.update;
           axios.get('/json')
           .then(function (response) {
-            console.log("ok",response.data);
+            //console.log("ok",response.data);
             dt = response.data.event[9].emoji_date + " " + response.data.event[9].emoji_time;
+            currentdt = response.data.current_date + " " + response.data.current_time;
             emoji = response.data.event[9].emoji;
             if (emoji == "tired") {
                 //console.log("is tired");
-                update("/static/tired.png",dt);
+                update("/static/tired.png",dt,currentdt);
             } else if (emoji == "sad") {
                 //console.log("is sad");
-                update("/static/sad.png",dt);
+                update("/static/sad.png",dt,currentdt);
             } else if (emoji == "happy") {
                 //console.log("is happy");
-                update("/static/happy.png",dt);
+                update("/static/happy.png",dt,currentdt);
             }    
           })
           .catch(function (error) {
@@ -60,12 +65,14 @@
             console.log(error);
           });
         },
-        update: function(text,dt) {
+        update: function(text,dt,currentdt) {
             this.imagesrc = text;
             this.dt = dt;
+            this.currentdt = currentdt;
         }
       },
       created: function() {
+          this.hello();
           const myTimeout = setInterval(this.hello, 5000);
       }
     })
