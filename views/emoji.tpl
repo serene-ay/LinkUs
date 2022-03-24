@@ -13,12 +13,15 @@
 
         <v-container>
           <v-row class="col-12 justify-center">
+            <div>Serene is feeling:</div>
               <img :src="imagesrc" width=100>
           </v-row>
           <v-row class="col-12 justify-center">
+            Last update time: 
               {% dt %}
           </v-row>
           <v-row class="col-12 justify-center">
+            Time at Serene's city: 
               {% currentdt %}
           </v-row>
         </v-container>
