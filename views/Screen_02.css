@@ -1,0 +1,140 @@
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    h1{
+        font-size: 30px;
+        text-align: center;
+        margin-top: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 10px;
+    }
+    h3{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-bottom: 15px;
+    }
+    .back-image{
+
+        height: 370px;
+        display: flex;
+        background-size: cover;
+        margin-bottom: -30px;
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+
+    }
+    .location{
+            background-image: url('/location.png');
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+
+        .all-cards{
+
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        box-shadow: 0 0 11px rgba(33,33,33,.2);
+        margin-left:30px ;
+        margin-right: 30px;
+        margin-top: 20px;
+        margin-bottom: auto;
+        border-radius: 20px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .card{
+            background: white;
+            width: 120px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+        .card1{
+            background: white;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+        }
+
+        .card-image {
+            /* background: rgb(218, 140, 211); */
+            height: 70px;
+            margin-bottom: 20;
+            background-size: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-image1 {
+            height: 50px;
+            margin-bottom: 0;
+            background-size: cover;
+
+        }
+        .home{
+            background-image: url('/home.png');
+        }
+        .university{
+            background-image: url('/university.png');
+        }
+        .shop{
+            background-image: url('/shop.jpg');
+        }
+        .park{
+            background-image: url('/park.jpg');
+        }
+         .study{
+            background-image: url('/1study.jpg');
+        }
+        .eat{
+            background-image: url('/eating.jpeg');
+        }
+        .sleep{
+            background-image: url('/sleeping.png');
+        }
+        .errand{
+            background-image: url('/errands.jpg');
+        }
+        .sad{
+            background-image: url('/sad.png');
+        }
+        .angry{
+            background-image: url('/angry.png');
+        }
+        .happy{
+            background-image: url('/happy.png');
+        }
+        .tired{
+            background-image: url('/tired.png');
+        }
+
+        .card h2{
+            text-align: center;
+            margin: 5px;
+            font-size: 20px;
+            font-family: sans-serif;
+
+        }
+
+        .card:active{
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+            border: solid rebeccapurple;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
