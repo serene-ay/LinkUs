@@ -15,6 +15,9 @@
           <v-row class="col-12 justify-center">
               <img :src="imagesrc" width=100>
           </v-row>
+          <v-row class="col-12 justify-center">
+              {% dt %}
+          </v-row>
         </v-container>
 
       </v-main>
@@ -30,23 +33,26 @@
       delimiters: ['{%', '%}'],
       vuetify: new Vuetify(),
       data: {
-        imagesrc: "/static/search.svg"
+        imagesrc: "",
+        dt: ""
       },
       methods: {
         hello: function() {
           update = this.update;
-          axios.get('/get/emoji')
+          axios.get('/json')
           .then(function (response) {
-            //console.log("ok",response.data);
-            if (response.data == "tired") {
+            console.log("ok",response.data);
+            dt = response.data.event[9].emoji_date + " " + response.data.event[9].emoji_time;
+            emoji = response.data.event[9].emoji;
+            if (emoji == "tired") {
                 //console.log("is tired");
-                update("/static/search.svg");
-            } else if (response.data == "sad") {
+                update("/static/tired.png",dt);
+            } else if (emoji == "sad") {
                 //console.log("is sad");
-                update("/static/sad.svg");
-            } else if (response.data == "happy") {
+                update("/static/sad.png",dt);
+            } else if (emoji == "happy") {
                 //console.log("is happy");
-                update("/static/happy.svg");
+                update("/static/happy.png",dt);
             }    
           })
           .catch(function (error) {
@@ -54,8 +60,9 @@
             console.log(error);
           });
         },
-        update: function(text) {
+        update: function(text,dt) {
             this.imagesrc = text;
+            this.dt = dt;
         }
       },
       created: function() {
