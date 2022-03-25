@@ -83,6 +83,12 @@
             text-decoration: none;
             box-shadow: 0 0 11px rgba(33,33,33,.2);
         }
+        .card-image {
+            height: 80px;
+            margin-bottom: 0;
+            background-size: cover;
+
+        }
         .card-image1 {
             height: 50px;
             margin-bottom: 0;
@@ -91,43 +97,27 @@
         }
         .home{
             background-image: url('/static/home.png');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .university{
             background-image: url('/static/university.png');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .shop{
             background-image: url('/static/shop.jpg');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .park{
             background-image: url('/static/park.jpg');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .study{
             background-image: url('/static/study.jpg');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .eat{
             background-image: url('/static/eating.jpeg');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .sleep{
             background-image: url('/static/sleeping.png');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .errand{
             background-image: url('/static/errands.jpg');
-            background-size: contain;
-            height: 80px;width:150px;
         }
         .sad{
             background-image: url('/static/sad.png');
