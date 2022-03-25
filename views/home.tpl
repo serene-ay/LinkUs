@@ -225,6 +225,9 @@
                 </div>
             </a>
         </section>
+        <v-snackbar v-model="notify" class="text-center" :timeout=5000 >
+              {% text  %}
+        </v-snackbar>
     </div>
   </div>
 
