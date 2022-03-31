@@ -9,6 +9,7 @@ import sys
 
 # Making a get response
 response = requests.get('http://35.201.182.206/json')
+# Get the previous location & activity
 previous_event = response.json()["event"][9]
 print("set previous activity: ",previous_event["message"])
 print("set previous location: ",previous_event["location"])
@@ -20,19 +21,20 @@ GPIO.setmode(GPIO.BOARD)
 
 # Set pin 11, 35 & 15 as outputs, and define as PWM servo1, servo2 & servo3
 GPIO.setup(11,GPIO.OUT)
-servo1 = GPIO.PWM(11,50) # pin 11 for servo1
+servo1 = GPIO.PWM(11,50) # pin 11 for servo1, servo1 is connected to time graphics cog
 
 GPIO.setup(35,GPIO.OUT)
-servo2 = GPIO.PWM(35,50) # pin 35 for servo2
+servo2 = GPIO.PWM(35,50) # pin 35 for servo2, servo2 is connected to location graphics cog
 
 GPIO.setup(15,GPIO.OUT)
-servo3 = GPIO.PWM(15,50) # pin 15 for servo3
+servo3 = GPIO.PWM(15,50) # pin 15 for servo3, servo3 is connected to activity graphics cog
 
 # Start PWM running on all servos, value of 0 (pulse off)
 servo1.start(0)
 servo2.start(0)
 servo3.start(0)
 
+# set servo to rotate 360 degrees
 pin = 35
 dutyCycle = 1
 timeOn = 0.5
@@ -46,7 +48,7 @@ if len(sys.argv) > 3: timeOn = float(sys.argv[3])
 if len(sys.argv) > 4: zeroCycle = float(sys.argv[4])
 if len(sys.argv) > 5: timeOff = float(sys.argv[5])
 
-
+# set function to rotate activites graphics
 def changeActivity(counter):
   for i in range(counter):
     servo3.ChangeDutyCycle(dutyCycle)
@@ -55,6 +57,7 @@ def changeActivity(counter):
     time.sleep(timeOff)
     servo3.ChangeDutyCycle(0)
 
+# set function to rotate locations graphics
 def changeLocation(counter):
   for i in range(counter):
     servo2.ChangeDutyCycle(dutyCycle)
@@ -64,12 +67,14 @@ def changeLocation(counter):
     servo2.ChangeDutyCycle(0)
 
 
-
+#infinite loop that get json every 3 seconds to track latest status
 while True:
     response = requests.get('http://35.201.182.206/json')
+    #get the latest status
     latest_event = response.json()["event"][9]
     print("2. latest activity: ",latest_event["message"])
     print("latest location: ",latest_event["location"])
+    #set activity & location as the latest status
     activity = latest_event["message"]
     location = latest_event["location"]
 
@@ -150,8 +155,7 @@ while True:
             changeLocation(1) 
 
 
-
-        
+    # Set current status back to previous status after function had been ran    
     previous_event = latest_event
     previous_activity = previous_event["message"]
     previous_location = previous_event["location"]
