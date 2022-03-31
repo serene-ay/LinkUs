@@ -32,11 +32,12 @@ def goodbye():
     pickle.dump(dict(data), file)
     print("goodbye")
 
+# serve the home page
 @app.route('/')
 def home():
-    ip = request.environ.get('REMOTE_ADDR')
-    return template('home', ip=ip)
+    return template('home')
 
+# RESTFUL POST for pushing data
 @app.route('/b/<event_type>',method="POST")
 def button_call(event_type):
     if event_type in events and request.json and "info" in dict(request.json):
@@ -50,6 +51,7 @@ def button_call(event_type):
         return HTTPResponse(body='501 missing message', status=501)
     return
 
+# RESTFUL GET to get json data
 @app.route('/json')
 def return_json():
     response.content_type = 'application/json'
@@ -57,24 +59,17 @@ def return_json():
     data["current_date"] = time.strftime("%Y-%m-%d")
     return json.dumps(dict(data))
 
-@app.route('/get/emoji')
-def return_emoji():
-    response.content_type = 'application/json'
-    emoji = data["event"][event_history_size-1]["emoji"]
-    return json.dumps(emoji)
-
+# serving emoji page
 @app.route('/emoji')
 def emoji():
     return template('emoji')
 
+# serving static file
 @app.route('/static/<filename>')
 def server_static(filename):
     return static_file(filename, root='static/')
 
-@app.route('/test')
-def test():
-    return "test"
-
+# default route, redirect to home page
 @app.route('/<tmp>')
 def tmp(tmp):
     redirect("/")
