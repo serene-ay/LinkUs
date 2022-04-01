@@ -5,6 +5,8 @@
 3. home.tpl is a HTML script with Javascript functions to push data in JSON. It is the interface of the webpage application using the link http://35.201.182.206/.
 4. emoji.tpl is a HTML script with Javascript functions to pull data from JSON. It is the interface of the webpage http://35.201.182.206/emoji to be shown on the screen of the physical prototype.
 
+![alt text](UML_diagram.png)
+
 ## Quick start and Instruction
 ### Linux server with public IP address
 >To install python3, see the instruction on https://docs.python.org/3/using/unix.html#on-linux. <br>
