@@ -15,13 +15,16 @@ This set of code is for executing the full function of the physical prototype of
 ### Linux server with public IP address
 >To install python3, see the instruction on https://docs.python.org/3/using/unix.html#on-linux. <br>
 >To copy codes into the server, type command `git clone git@github.com:serene-ay/techHCI.git`. <br>
+>Then install dependency Python library by typing the following commands: <br>
+>`python3 -m pip install gevent` <br>
+>`python3 -m pip install bottle` <br>
 >To execute app.py, type command `./app.py`.
 ### Function cylindrical disks rotation on Raspberry Pi
 >To copy codes into the Raspberry Pi, type command `git clone git@github.com:serene-ay/techHCI.git`. <br>
 >Then install dependency Python library by typing following commands: <br>
 >`sudo apt-get update` <br>
 >`sudo apt-get install rpi.gpio` <br>
->`pip install python-time` <br>
->`python -m pip install requests` <br>
+>`python3 -m pip install python-time` <br>
+>`python3 -m pip install requests` <br>
 >To run the script, type command `python3 rotate.py`. <br>
 >Since this script contains an infinite loop, it pulls JSON every 3 seconds non-stop, to stop running the script, type command ctrl+C to exit.
