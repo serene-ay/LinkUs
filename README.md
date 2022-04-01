@@ -18,7 +18,7 @@ This set of code is for executing the full function of the physical prototype of
 >Then install dependency Python library by typing the following commands: <br>
 >`python3 -m pip install gevent` <br>
 >`python3 -m pip install bottle` <br>
->To execute app.py, type command `app.py`.
+>To execute app.py, type command `python3 app.py`.
 ### Function cylindrical disks rotation on Raspberry Pi
 >To copy codes into the Raspberry Pi, type command `git clone git@github.com:serene-ay/techHCI.git`. <br>
 >Then install dependency Python library by typing following commands: <br>
@@ -28,3 +28,4 @@ This set of code is for executing the full function of the physical prototype of
 >`python3 -m pip install requests` <br>
 >To run the script, type command `python3 rotate.py`. <br>
 >Since this script contains an infinite loop, it pulls JSON every 3 seconds non-stop, to stop running the script, type command ctrl+C to exit.
+>To display current mood, time and last updated time pull from JSON on the screen of physical prototype, open http://35.201.182.206/emoji in browser.
