@@ -78,10 +78,16 @@ while True:
     activity = latest_event["message"]
     location = latest_event["location"]
 
+    # Position of the physical loaction graphics: home > university > store > part > one counter blank section
+    # Position of the physical activity graphics: eat > study > sleep > walk > one counter blank section
+    # Each section of graphics takes 2 counters
+    # A whole rotation takes 9 counters
+
     if latest_event != previous_event:
         print("3. ", previous_activity)
         print("4. ", activity)
         print("motor will run")
+        # Below functions are written base on 12 posibilities of rotation situation
         if activity == "eat":
           if previous_activity == "study":
             print("turn 8 section")
@@ -124,7 +130,7 @@ while True:
             changeActivity(1) 
 
 
-
+        # Below functions are written base on 12 posibilities of rotation situation
         if location == "home":
           if previous_location == "university":
             changeLocation(8) 
