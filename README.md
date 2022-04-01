@@ -1,4 +1,6 @@
 # techHCI
+This set of code is for executing the full function of the physical prototype of LinkUS.
+
 ## Description and Functionality of Prototypes
 1. app.py is a python script that provides RESTFUL API for push and pull data in JSON format. It also works as a webserver to serve both the webpage on http://35.201.182.206/ and http://35.201.182.206/emoji. Any Linux server with public IP address and with Python3 installed can run this script.
 2. rotate.py is a script to be run on the Raspberry Pi to function the rotation of the cylindrical disks of the physical prototype. It contains an infinite loop to pull JSON every 3 seconds.
