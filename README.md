@@ -28,4 +28,5 @@ This set of code is for executing the full function of the physical prototype of
 >`python3 -m pip install requests` <br>
 >To run the script, type command `python3 rotate.py`. <br>
 >Since this script contains an infinite loop, it pulls JSON every 3 seconds non-stop, to stop running the script, type command ctrl+C to exit.
+>
 >01/04/2022
