@@ -18,7 +18,7 @@ This set of code is for executing the full function of the physical prototype of
 >Then install dependency Python library by typing the following commands: <br>
 >`python3 -m pip install gevent` <br>
 >`python3 -m pip install bottle` <br>
->To execute app.py, type command `./app.py`.
+>To execute app.py, type command `app.py`.
 ### Function cylindrical disks rotation on Raspberry Pi
 >To copy codes into the Raspberry Pi, type command `git clone git@github.com:serene-ay/techHCI.git`. <br>
 >Then install dependency Python library by typing following commands: <br>
