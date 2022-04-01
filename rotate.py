@@ -35,18 +35,10 @@ servo2.start(0)
 servo3.start(0)
 
 # set servo to rotate 360 degrees
-pin = 35
 dutyCycle = 1
 timeOn = 0.5
 zeroCycle = 5  # 7.5
 timeOff = 2
-
-
-if len(sys.argv) > 1: pin = int(sys.argv[1])
-if len(sys.argv) > 2: dutyCycle = float(sys.argv[2])
-if len(sys.argv) > 3: timeOn = float(sys.argv[3])
-if len(sys.argv) > 4: zeroCycle = float(sys.argv[4])
-if len(sys.argv) > 5: timeOff = float(sys.argv[5])
 
 # set function to rotate activites graphics
 def changeActivity(counter):
@@ -80,8 +72,8 @@ while True:
 
     # Position of the physical loaction graphics: home > university > store > part > one counter blank section
     # Position of the physical activity graphics: eat > study > sleep > walk > one counter blank section
-    # Each section of graphics takes 2 counters
-    # A whole rotation takes 9 counters
+    # Each section of graphics takes 1 counter
+    # A whole rotation takes 4.5 counters
 
     if latest_event != previous_event:
         print("3. ", previous_activity)
