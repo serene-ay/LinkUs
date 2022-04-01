@@ -1,4 +1,4 @@
-# techHCI
+# LinkUs
 LinkUS is a communication device that uses ambient computing to promote and facilitate asynchronous conversation between parents and their children who live in different countries. <br>
 This set of code is for executing the full function of the physical prototype of LinkUS.
 
