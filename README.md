@@ -27,5 +27,10 @@ This set of code is for executing the full function of the physical prototype of
 >`python3 -m pip install python-time` <br>
 >`python3 -m pip install requests` <br>
 >To run the script, type command `python3 rotate.py`. <br>
->Since this script contains an infinite loop, it pulls JSON every 3 seconds non-stop, to stop running the script, type command ctrl+C to exit.
->
+>Since this script contains an infinite loop, it pulls JSON every 3 seconds non-stop, to stop running the script, type command ctrl+C to exit. <br>
+
+## Contributors
+[Serene Chinglong Au-Yeung](https://github.com/serene-ay) - MSc Human Computer Interaction student <br>
+[Deepika Chetan Savla](https://github.com/Dsavlaa) - MSc Human Computer Interaction student <br>
+[Pratikshit Prakash](https://github.com/pratikshitp) - MSc Human Computer Interaction student <br>
+[Bingzhang He](https://github.com/BingzhangHe) - MSc Human Computer Interaction student <br>
